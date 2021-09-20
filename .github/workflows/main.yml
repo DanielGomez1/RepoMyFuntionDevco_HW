@@ -51,6 +51,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           aws lambda update-function-code \
-          --function-name "arn:aws:lambda:us-east-2:389195200313:function:myFuntionDevco_HW" \
+          --function-name arn:aws:lambda:us-east-2:389195200313:function:myFuntionDevco_HW \
           --zip-file "fileb://./myFuntionDevco_HW-820d0864-1b24-44e6-ac30-3008a56e79d4.zip" \
           --region "us-east-2"
