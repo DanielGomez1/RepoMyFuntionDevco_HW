@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
         
       - name: Comprimir Recurso
-        run: zip -r myFuntionDevco_HW-820d0864-1b24-44e6-ac30-3008a56e79d4.zip /home/runner/work/RepoMyFuntionDevco_HW/RepoMyFuntionDevco_HW/lambda_function.py
+        run: zip -r myFuntionDevco_HW-820d0864-1b24-44e6-ac30-3008a56e79d4.zip lambda_function.py
         
       - name: Version AWS
         run: aws --version
