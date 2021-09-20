@@ -24,18 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Listar Archivos
-        run: ls -a
-        
-      - name: Listar ruta
-        run: pwd
         
       - name: Comprimir Recurso
         run: zip -r myFuntionDevco_HW-820d0864-1b24-44e6-ac30-3008a56e79d4.zip /home/runner/work/RepoMyFuntionDevco_HW/RepoMyFuntionDevco_HW/lambda_function.py
         
-      # Runs a single command using the runners shell
       - name: Listar Archivos
         run: ls -a
         
@@ -44,10 +36,11 @@ jobs:
         
       - name: Version AWS
         run: aws --version
-     
         
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          aws lambda update-function-code \
+          --function-name "myFuntionDevco_HW" \
+          --zip-file "fileb://./myFuntionDevco_HW-820d0864-1b24-44e6-ac30-3008a56e79d4.zip" \
+          --region "us-east-2"
